@@ -7,11 +7,10 @@ import java.util.Random;
 public class Player {
 
     public final int MAXIMUMRUNSPERBOWL = 6;
-
-    Random randomRuns = new Random();
     private final List<Integer> runs = new ArrayList<>();
+    Random randomRuns = new Random();
 
-    public int getRunForThisBall() {
+    public int getRunForTheCurrentBall() {
         return randomRuns.nextInt(MAXIMUMRUNSPERBOWL);
     }
 
@@ -27,7 +26,7 @@ public class Player {
     public void printScore() {
         System.out.println("Runs/ball: ");
         for (Integer run : runs) {
-            System.out.print(run);
+            System.out.print(" " + run);
         }
     }
 }

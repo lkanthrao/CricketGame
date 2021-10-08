@@ -1,6 +1,7 @@
 package main;
 
 import main.cricketmatch.models.*;
+import main.cricketmatch.service.Match;
 
 public class CricketGame {
 
@@ -8,7 +9,7 @@ public class CricketGame {
 
     public static void main(String[] args) {
 
-        Player batsMan = new DefensivePlayer();
+        Player batsMan = new DefensiveBatsMan();
 
         Player bowler = new Player();
 

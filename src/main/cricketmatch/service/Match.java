@@ -1,4 +1,7 @@
-package main.cricketmatch.models;
+package main.cricketmatch.service;
+
+import main.cricketmatch.models.OverModel;
+import main.cricketmatch.models.Player;
 
 public class Match {
 
@@ -24,8 +27,8 @@ public class Match {
         int totalRuns = 0;
 
         for (int eachBall = 0; eachBall < overModel.NUMBER_OF_BALLS_IN_A_OVER; eachBall++) {
-            int bowlerRunPerBall = bowlerModel.getRunForThisBall();
-            int batsManRunPerBall = batsManModel.getRunForThisBall();
+            int bowlerRunPerBall = bowlerModel.getRunForTheCurrentBall();
+            int batsManRunPerBall = batsManModel.getRunForTheCurrentBall();
 
             batsManModel.addRuns(batsManRunPerBall);
 
@@ -33,7 +36,6 @@ public class Match {
                 matchresult = MATCHRESULT.LOSS;
                 return;
             }
-
             totalRuns = totalRuns + batsManRunPerBall;
 
             if (totalRuns >= target) {
@@ -48,7 +50,7 @@ public class Match {
     }
 
     public boolean isTheMatchWon() {
-        return MATCHRESULT.valueOf(matchresult.name()) == MATCHRESULT.WON;
+        return matchresult != null && MATCHRESULT.valueOf(matchresult.name()) == MATCHRESULT.WON;
     }
 
     enum MATCHRESULT {
