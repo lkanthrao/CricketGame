@@ -1,6 +1,6 @@
 package main.cricketmatch.models;
 
-public class HitManBatsMan extends PlayerModel {
+public class HitManBatsMan extends Player {
 
     public final int MAXIMUMRUNSPERBOWL = 6;
 

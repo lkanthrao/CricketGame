@@ -5,19 +5,14 @@ public class Match {
     public static final String BATSMAN_WON = "Batsman Won";
     public static final String MATCH_LOST = "Match Lost";
 
-    PlayerModel bowlerModel;
-    PlayerModel batsManModel;
-    OverModel overModel;
-    int target;
+    private Player bowlerModel;
+    private Player batsManModel;
+    private OverModel overModel;
+    private int target;
 
-    MATCHRESULT matchresult;
+    private MATCHRESULT matchresult;
 
-    enum MATCHRESULT {
-        WON,
-        LOSS
-    }
-
-    public Match(int pTarget, PlayerModel pBatsManModel, PlayerModel pBowlerModel, OverModel pOverModel) {
+    public Match(int pTarget, Player pBatsManModel, Player pBowlerModel, OverModel pOverModel) {
         this.target = pTarget;
         this.batsManModel = pBatsManModel;
         this.bowlerModel = pBowlerModel;
@@ -53,7 +48,12 @@ public class Match {
     }
 
     public boolean isTheMatchWon() {
-        return MATCHRESULT.valueOf(matchresult.name()) == MATCHRESULT.WON ? true : false;
+        return MATCHRESULT.valueOf(matchresult.name()) == MATCHRESULT.WON;
+    }
+
+    enum MATCHRESULT {
+        WON,
+        LOSS
     }
 
 }

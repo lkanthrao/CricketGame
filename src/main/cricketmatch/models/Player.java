@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class PlayerModel {
+public class Player {
 
-    //    TODO move to abstract class
     public final int MAXIMUMRUNSPERBOWL = 6;
 
     Random randomRuns = new Random();
+    private final List<Integer> runs = new ArrayList<>();
 
     public int getRunForThisBall() {
         return randomRuns.nextInt(MAXIMUMRUNSPERBOWL);
     }
-
-    private List<Integer> runs = new ArrayList<>();
 
     public List<Integer> getRuns() {
         return runs;

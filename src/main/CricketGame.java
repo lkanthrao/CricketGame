@@ -3,7 +3,7 @@ package main;
 import main.cricketmatch.models.HitManBatsMan;
 import main.cricketmatch.models.Match;
 import main.cricketmatch.models.OverModel;
-import main.cricketmatch.models.PlayerModel;
+import main.cricketmatch.models.Player;
 
 public class CricketGame {
 
@@ -11,9 +11,9 @@ public class CricketGame {
 
     public static void main(String[] args) {
 
-        PlayerModel batsMan = new HitManBatsMan();
+        Player batsMan = new HitManBatsMan();
 
-        PlayerModel bowler = new PlayerModel();
+        Player bowler = new Player();
 
         OverModel overModel = new OverModel(6);
 
