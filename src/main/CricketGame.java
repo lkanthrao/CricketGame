@@ -1,16 +1,17 @@
 package main;
 
-import com.cricketmatch.models.Match;
-import com.cricketmatch.models.OverModel;
-import com.cricketmatch.models.PlayerModel;
+import main.cricketmatch.models.HitManBatsMan;
+import main.cricketmatch.models.Match;
+import main.cricketmatch.models.OverModel;
+import main.cricketmatch.models.PlayerModel;
 
 public class CricketGame {
 
-    public static final int TARGET = 12;
+    public static final int TARGET = 25;
 
     public static void main(String[] args) {
 
-        PlayerModel batsMan = new PlayerModel();
+        PlayerModel batsMan = new HitManBatsMan();
 
         PlayerModel bowler = new PlayerModel();
 
@@ -24,6 +25,9 @@ public class CricketGame {
         } else {
             System.out.println("Match Lost");
         }
+
+        batsMan.printScore();
+
     }
 
 }

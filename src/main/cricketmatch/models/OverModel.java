@@ -1,4 +1,4 @@
-package com.cricketmatch.models;
+package main.cricketmatch.models;
 
 public class OverModel {
 

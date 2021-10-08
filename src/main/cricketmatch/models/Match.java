@@ -1,4 +1,4 @@
-package com.cricketmatch.models;
+package main.cricketmatch.models;
 
 public class Match {
 
@@ -32,20 +32,24 @@ public class Match {
             int bowlerRunPerBall = bowlerModel.getRunForThisBall();
             int batsManRunPerBall = batsManModel.getRunForThisBall();
 
-            if (bowlerRunPerBall == batsManRunPerBall) {
+            batsManModel.addRuns(batsManRunPerBall);
+
+            if (isBatsManOut(bowlerRunPerBall, batsManRunPerBall)) {
                 matchresult = MATCHRESULT.LOSS;
                 return;
             }
 
             totalRuns = totalRuns + batsManRunPerBall;
 
-            System.out.print(batsManRunPerBall + " ");
-
             if (totalRuns >= target) {
                 matchresult = MATCHRESULT.WON;
                 return;
             }
         }
+    }
+
+    private boolean isBatsManOut(int bowlerRunPerBall, int batsManRunPerBall) {
+        return bowlerRunPerBall == batsManRunPerBall;
     }
 
     public boolean isTheMatchWon() {
