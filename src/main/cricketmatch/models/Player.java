@@ -7,12 +7,10 @@ import java.util.Random;
 public class Player {
 
     public final int MAXIMUMRUNSPERBOWL = 6;
-    private final List<Integer> runs = new ArrayList<>();
-    Random randomRuns = new Random();
 
-    public int getRunForTheCurrentBall() {
-        return randomRuns.nextInt(MAXIMUMRUNSPERBOWL);
-    }
+    private final List<Integer> runs = new ArrayList<>();
+
+    Random randomRuns = new Random();
 
     public List<Integer> getRuns() {
         return runs;
@@ -20,6 +18,11 @@ public class Player {
 
     public void addRuns(Integer run) {
         this.runs.add(run);
+    }
+
+    //Seggregate this
+    public int getRunForTheCurrentBall() {
+        return randomRuns.nextInt(MAXIMUMRUNSPERBOWL);
     }
 
     //Seggregate this
